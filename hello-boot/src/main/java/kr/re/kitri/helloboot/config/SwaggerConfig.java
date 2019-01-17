@@ -36,7 +36,7 @@ public class SwaggerConfig {
 															.operationsSorter(OperationsSorter.ALPHA)
 															.showExtensions(false)
 															.tagsSorter(TagsSorter.ALPHA)
-															.supportedSubmitMethods(UiConfiguration.Constants.NO_SUBMIT_METHODS)
+															.supportedSubmitMethods(UiConfiguration.Constants.DEFAULT_SUBMIT_METHODS)
 															.validatorUrl(null).build();
 	}
 	

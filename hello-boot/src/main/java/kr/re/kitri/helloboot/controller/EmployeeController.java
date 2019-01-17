@@ -2,6 +2,8 @@ package kr.re.kitri.helloboot.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +19,8 @@ import kr.re.kitri.helloboot.service.EmployeeService;
 @RestController
 public class EmployeeController {
 	
+	private static Logger logger = LoggerFactory.getLogger(EmployeeController.class); 
+	
 	@Autowired
 	private EmployeeService service;
 	
@@ -31,7 +35,10 @@ public class EmployeeController {
 	//직원 번호로 상세 조회
 	@GetMapping("/employees/{empId}")
 	public LombokEmployee searchEmployeeById(@PathVariable String empId ) {
-		System.out.println("searchEmployeeById++++++empId = "+empId);
+		
+		logger.debug("=======================================");
+		logger.debug("searchEmployeeById++++++empId = "+empId);
+		logger.debug("=======================================");
 		
 		return service.searchEmployee(empId);
 	}
